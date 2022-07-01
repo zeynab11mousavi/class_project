@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>group_project</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <style>
+        td,
+        th {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-center align-items-center mt-4">
+            <div>
+                <div class="text-center">
+                    <h2>This Table Is Secret Information</h2>
+                    <p>You Cant Copy information Here. &#128522; &#128522; &#128522; We are powerful.</p>
+                </div>
+
+                <div class="d-flex flex-row justify-content-center align-items-center mt-5">
+                    <button class="mx-2 btn btn-success" type="submit" id="submit">Add</button>
+                    <div class="col-8 input-group">
+                        <span class="input-group-text" id="addon-wrapping"><svg xmlns="http://www.w3.org/2000/svg"
+                                width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                            </svg></span>
+                        <input type="text" class="form-control" id="searchBox" placeholder="Search here...">
+                    </div>
+                    <button class="mx-2 btn btn-info" type="submit">Refresh</button>
+                </div>
+
+                <table id="infoTable" class="table bg-white mt-5 table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Family</th>
+                            <th>Birthday</th>
+                            <th>National ID</th>
+                            <th>Father Name</th>
+                            <th>Job</th>
+                            <th>Education</th>
+                            <th>Gender</th>
+                            <th>Country</th>
+                            <th>State</th>
+                            <th>City</th>
+                            <th>Street</th>
+                            <th>Block</th>
+                            <th>No</th>
+                            <th>Floor</th>
+                            <th>Unit</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+                <footer>
+                    <nav class="Page navigation example d-flex justify-content-center">
+                        <ul class="pagination">
+                            <!-- <li class="page-item"><a class="page-link" href="#">Previous</a></li> -->
+                            <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+                            <!-- <li class="page-item"><a class="page-link" href="#">Next</a></li> -->
+                        </ul>
+                    </nav>
+                </footer>
+
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex">
+                        <div class="d-flex flex-column gap-3 w-50">
+                            <div>
+                                <span>Name : </span>
+                                <span id="userName"></span>
+                            </div>
+                            <div>
+                                <span>Birthday : </span>
+                                <span id="userBirthday"></span>
+                            </div>
+                            <div>
+                                <span>Fathers Name : </span>
+                                <span id="userFather"></span>
+                            </div>
+                            <div>
+                                <span>Education : </span>
+                                <span id="userEducation"></span>
+                            </div>
+                            <div>
+                                <span>Country : </span>
+                                <span id="userCountry"> </span>
+                            </div>
+                            <div>
+                                <span>City : </span>
+                                <span id="userCity"></span>
+                            </div>
+                            <div>
+                                <span>Block : </span>
+                                <span id="userBlock"></span>
+                            </div>
+                            <div>
+                                <span>Floor : </span>
+                                <span id="userFloor"></span>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column gap-3 w-50">
+                            <div>
+                                <span>Family : </span>
+                                <span id="userFamily"></span>
+                            </div>
+                            <div>
+                                <span>NationalId : </span>
+                                <span id="userNationalId"></span>
+                            </div>
+                            <div>
+                                <span>Job: </span>
+                                <span id="userJob"></span>
+                            </div>
+                            <div>
+                                <span>Gender : </span>
+                                <span id="userGender"></span>
+                            </div>
+                            <div>
+                                <span>State : </span>
+                                <span id="userState"></span>
+                            </div>
+                            <div>
+                                <span>Street : </span>
+                                <span id="userStreet"></span>
+                            </div>
+                            <div>
+                                <span>No : </span>
+                                <span id="userNo"></span>
+                            </div>
+                            <div>
+                                <span>Unit : </span>
+                                <span id="userUnit"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger" id="deleteItem" data-bs-dismiss="modal">
+                            Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <img src="/img/Infinity-1s-200px.svg" style="position: absolute; top: 50%;left: 50%;transform: translate(-50% , -50%); display: none" alt="" id = "loading">
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="./app.js"></script>
+
+</body>
+
+</html>
